@@ -1,30 +1,18 @@
 import React from 'react';
-import card from './card.png';
+import card from './icon-question.png';
 
 class MemoryCard extends React.Component {
-
-    constructor(props) {
-        super(props);
-
-        this.state = { isFlipped: false };
-    }
-    
-    clickHandler = () => {
-        this.setState({
-            isFlipped: !this.state.isFlipped
-        });
-    }
     
     render() {
         let innerClass = 'MemoryCard__inner';
-        if (this.state.isFlipped) {
-            innerClass += 'flipped';
+        if (this.props.isFlipped) {
+            innerClass += " flipped";
         }
 
-        return ( <div className="col-sm-3 col-md-3 col-lg-3 mb-2 mt-3">
-            <div className="MemoryCard" onClick={this.clickHandler}>
+        return ( <div className="col-sm-3 col-md-3 col-lg-3 mt-3">
+            <div className="MemoryCard" onClick={this.props.pickCard}>
                 <div className={innerClass}>
-                    <div className="MemoryCard__front"> ∆ 
+                    <div className="MemoryCard__front"> {this.props.symbol} 
                     </div>
                         <div className="MemoryCard__back">
                             <img src={card} alt="card"/>

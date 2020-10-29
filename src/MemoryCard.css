@@ -1,10 +1,27 @@
+@font-face {
+    font-family: SpaceObsessed-5dzv;
+    src: url(/src/components/SpaceObsessed-5dzv.ttf);
+}
+
+body, html {
+    background-color: #637373
+}
+
 .MemoryCard__back {
-    background: #16A7A2;
+    background: repeating-linear-gradient(
+  to right,
+  #ffeadb,
+  #ffeadb 10px,
+  #ffd180 10px,
+  #ffd180 20px
+);
+    
 }
 
 .MemoryCard__back img {
     width: 80px;
     height: auto;
+    margin-top: 10px;
 }
 
 .MemoryCard {
@@ -15,6 +32,7 @@
     cursor: pointer;
     position: relative;
     perspective: 800px;
+    
 }
 
 .MemoryCard__inner {
@@ -24,11 +42,11 @@
     transform-style: preserve-3d;
     transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-radius: 5px;
-    border: 3px solid #193D49;
+    border: 3px solid #679b9b;
     box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
-.MemoryCard__front .MemoryCard__back {
+.MemoryCard__front, .MemoryCard__back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -36,11 +54,73 @@
 }
 
 .MemoryCard__front {
-    font-size: 30px;
-    padding-top: 20px;
+    font-size: 50px;
+    padding-top: 5px;
     transform: rotateY(180deg);
+    color: #679b9b;
+    font-weight: bolder;
+    background-color: #ffeadb;
 }
 
-.MemoryCard__inner .flipped {
+.MemoryCard__inner.flipped {
     transform: rotateY(180deg);
+    
+    color: black;
+}
+
+h1 {
+    font-family: SpaceObsessed-5dzv;
+    font-size: 50px;
+}
+
+.title {
+    font-size: 50px;
+    color: #679b9b;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.subtitle {
+    font-family: SpaceObsessed-5dzv;
+    color: #679b9b;
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container-cards {
+    border: 1px solid #679b9b;
+    background-color: #ff9a76;
+}
+
+.container-header {
+    background-color: #ffeadb;
+}
+
+.lamp {
+    width: 180px;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    align-content: left;
+    justify-content: left;
+    margin-top: -148px;
+    margin-left: 670px;
+}
+
+button {
+    border-radius: 8px;
+    background-color: #ffefa0;
+    font-family: SpaceObsessed-5dzv;
+    color: #679b9b; 
+    font-size: 25px;
+    border: solid 2px #679b9b;
+}
+
+
+button:hover {
+    background-color: #ffeadb;
+    color: #14274e;
 }
